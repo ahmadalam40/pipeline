@@ -1,0 +1,35 @@
+name: Deployment of React-Shopify
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Packages
+        run: npm install
+      - name: cypress install
+        run: npm i cypress
+      - name: Verify Cypress
+        run: npx cypress verify
+      - name: Run Cypress
+        run: npx cypress run --spec "cypress/e2e/1-getting-started/todo.cy.js"
+
+  cypress-run:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/included:13.13.3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Cypress tests
+        run: npx cypress run --spec "cypress/e2e/1-getting-started/todo.cy.js"
