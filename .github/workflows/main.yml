@@ -22,14 +22,14 @@ jobs:
       - name: Verify Cypress
         run: npx cypress verify
       - name: Run Cypress
-        run: npx cypress run --spec "cypress/e2e/1-getting-started/todo.cy.js"
+        run: npx cypress run --spec "cypress/e2e/OpenCart/Register.cy.js"
 
-  cypress-run:
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/included:13.13.3
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/1-getting-started/todo.cy.js"
+  # cypress-run:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: cypress/included:13.13.3
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+  #     - name: Run Cypress tests
+  #       run: npx cypress run --spec "cypress/e2e/1-getting-started/todo.cy.js"
