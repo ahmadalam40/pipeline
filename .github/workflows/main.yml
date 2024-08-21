@@ -22,7 +22,7 @@ jobs:
       # - name: Verify Cypress
       #   run: npx cypress verify
       - name: Run Cypress
-        run: npx cypress run --spec "cypress/e2e/OpenCart/Register.cy.js"
+        run: npx cypress run --spec "cypress\e2e\OpenCart\Register.cy.js"
 
   # cypress-run:
   #   runs-on: ubuntu-latest
