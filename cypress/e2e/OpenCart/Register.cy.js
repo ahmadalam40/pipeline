@@ -2,10 +2,11 @@
 
 
 describe('Register', () => {
-    it('Register to OpenCart', () => {
-      cy.visit('https://www.opencart.com/')
-      cy.contains('a', 'Login').click({force: true})
-      cy.wait(3000)
+    it('parabank', () => {
+      cy.visit('https://parabank.parasoft.com/parabank/index.htm')
+      cy.contains('a', 'Register').click({force: true})
+      cy.get('input[name="customer.firstName"]').type('test')
+      cy.get('input[name="customer.lastName"]').type('QA')
     })
   })
 
