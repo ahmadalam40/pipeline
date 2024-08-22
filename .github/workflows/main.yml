@@ -32,4 +32,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/OpenCart/Register.cy.js"
+        run: npx cypress run --spec "cypress/e2e/E2EFlow/CallFunctions.cy.js"
