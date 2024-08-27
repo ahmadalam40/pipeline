@@ -5,11 +5,13 @@ module.exports = defineConfig({
     projectId: "1umxyc",
     specPattern: "cypress/e2e/**/*.js",
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
   },
-  reporter: 'reporters/custom.js',
-  reporter: 'mochawesome',
+  // reporter: 'reporters/custom.js',
+  reporter: 'cypress-mochawesome-reporter',
+  // reporter: 'mochawesome',
 
 });
 // const { defineConfig } = require('cypress');
