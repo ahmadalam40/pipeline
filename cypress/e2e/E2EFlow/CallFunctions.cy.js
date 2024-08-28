@@ -4,7 +4,7 @@ import Login from "../paraBankModule/Login.cy";
 
 describe('Call Function', () => {
 
-//Register()
+Register()
 Login()
     
     
