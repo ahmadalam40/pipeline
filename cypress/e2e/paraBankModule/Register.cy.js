@@ -26,7 +26,7 @@ const Register = () => {
             cy.get('input[name="customer.username"]').type('testingjk@gmail.com')
             cy.get('input[name="customer.password"]').type('Khan@2')
             cy.get('input[name="repeatedPassword"]').type('Khan@2')
-            cy.get('input[value="Register"]').click()
+            cy.get('input[value="Registe"]').click()
           })
     
   });
